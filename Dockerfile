@@ -1,5 +1,5 @@
 FROM centos:7
-ENV thrift_version=0.9.1 concrete_version=master
+ENV thrift_version=0.9.3 concrete_version=master
 MAINTAINER Ted <tedz.cs@gmail.com>
 
 WORKDIR /tmp
@@ -29,7 +29,6 @@ RUN git clone https://github.com/hltcoe/concrete.git && \
     ./reinstall.bash
 
 COPY analytic/convert_arc.py /opt/scripts/
-COPY data /opt/data
 
 CMD cd /opt/scripts && \
     python convert_arc.py
